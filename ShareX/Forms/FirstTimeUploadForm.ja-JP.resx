@@ -126,4 +126,12 @@
   <data name="btnNo.Text" xml:space="preserve">
     <value>いいえ</value>
   </data>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>注意！</value>
+  </data>
+  <data name="lblInfo.Text" xml:space="preserve">
+    <value>スクリーンショットをアップロードしますか？
+
+「いいえ」で、これを中止し、自動アップロードを無効化します。</value>
+  </data>
 </root>

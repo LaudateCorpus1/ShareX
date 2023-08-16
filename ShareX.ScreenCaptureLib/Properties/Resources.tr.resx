@@ -120,9 +120,6 @@
   <data name="FFmpegOptionsForm_buttonFFmpegBrowse_Click_Browse_for_ffmpeg_exe" xml:space="preserve">
     <value>ffmpeg.exe için gözat</value>
   </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Successfully_downloaded_FFmpeg_" xml:space="preserve">
-    <value>FFmpeg başarıyla indirildi.</value>
-  </data>
   <data name="FFmpegOptionsForm_UpdateUI_Quality_" xml:space="preserve">
     <value>Kalite:</value>
   </data>
@@ -137,9 +134,6 @@
   </data>
   <data name="RectangleTransparent_RectangleTransparent_Rectangle_capture_transparent" xml:space="preserve">
     <value>Dikdörtgen yakalama saydam</value>
-  </data>
-  <data name="FFmpegOptionsForm_DownloaderForm_InstallRequested_Download_of_FFmpeg_failed_" xml:space="preserve">
-    <value>FFmpeg indirme hatası.</value>
   </data>
   <data name="RectangleLight_InitializeComponent_Rectangle_capture_light" xml:space="preserve">
     <value>Dikdörtgen yakalama basit</value>
@@ -462,5 +456,35 @@ Resim düzenleyiciyi kapatmak ister misiniz?</value>
   </data>
   <data name="ShapeManager_CreateContextMenu_SwitchToSelectionToolAfterDrawing" xml:space="preserve">
     <value>Nesne çizdikten sonra seçim aracına geç</value>
+  </data>
+  <data name="AutoCopyImageToClipboard" xml:space="preserve">
+    <value>Resmi otomatik olarak panoya kopyala</value>
+  </data>
+  <data name="Bitrate" xml:space="preserve">
+    <value>Bit hızı:</value>
+  </data>
+  <data name="Blur" xml:space="preserve">
+    <value>Bulanıklaştır</value>
+  </data>
+  <data name="FPSLimit" xml:space="preserve">
+    <value>FPS limiti:</value>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>Vurgula</value>
+  </data>
+  <data name="Pixelate" xml:space="preserve">
+    <value>Mozaikle</value>
+  </data>
+  <data name="Processing" xml:space="preserve">
+    <value>İşleniyor...</value>
+  </data>
+  <data name="ShapeManager_CreateToolbar_ZoomToFitOnOpen" xml:space="preserve">
+    <value>Açılışta sığdırmak için yakınlaştır</value>
+  </data>
+  <data name="CutOutEffectSize" xml:space="preserve">
+    <value>Kesip çıkarma efekt boyutu:</value>
+  </data>
+  <data name="CutOutEffectType" xml:space="preserve">
+    <value>Kesip çıkarma efekti:</value>
   </data>
 </root>

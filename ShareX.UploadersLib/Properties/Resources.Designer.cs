@@ -19,7 +19,7 @@ namespace ShareX.UploadersLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -140,6 +140,15 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Connect....
+        /// </summary>
+        internal static string Connect {
+            get {
+                return ResourceManager.GetString("Connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &quot;File form name&quot; must be configured..
         /// </summary>
         internal static string CustomUploaderItem_GetFileFormName_FileFormNameMustBeConfigured {
@@ -163,6 +172,15 @@ namespace ShareX.UploadersLib.Properties {
         internal static string DeletionURL {
             get {
                 return ResourceManager.GetString("DeletionURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnect.
+        /// </summary>
+        internal static string Disconnect {
+            get {
+                return ResourceManager.GetString("Disconnect", resourceCulture);
             }
         }
         
@@ -331,12 +349,12 @@ namespace ShareX.UploadersLib.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon GooglePhotos {
+        internal static System.Drawing.Bitmap GooglePhotos {
             get {
                 object obj = ResourceManager.GetObject("GooglePhotos", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -440,9 +458,9 @@ namespace ShareX.UploadersLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Lithiio {
+        internal static System.Drawing.Bitmap LobFile {
             get {
-                object obj = ResourceManager.GetObject("Lithiio", resourceCulture);
+                object obj = ResourceManager.GetObject("LobFile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,6 +511,34 @@ namespace ShareX.UploadersLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("navigation_270_button_white", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///    &lt;title&gt;Authorization - ShareX&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            background-color: #242424;
+        ///            color: #fafafa;
+        ///            font-family: Arial, sans-serif;
+        ///            text-align: center;
+        ///        }
+        ///
+        ///        .container {
+        ///            position: absolute;
+        ///            top: 50%;
+        ///            left: 50%;
+        ///            transform: translat [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string OAuthCallbackPage {
+            get {
+                return ResourceManager.GetString("OAuthCallbackPage", resourceCulture);
             }
         }
         

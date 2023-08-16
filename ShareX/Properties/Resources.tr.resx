@@ -139,9 +139,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Kalan zaman: {0}s ({1}%) Toplam: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Katkıda bulunanlar</value>
-  </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Adresten dosya indir ve yükle</value>
   </data>
@@ -213,17 +210,8 @@ Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çal
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Panoya kopyalandı: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Menüyü gizle</value>
-  </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Geçerli Twitter hesabı bulunamadı.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Menüyü göster</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Kolonları göster</value>
   </data>
   <data name="QuickTaskMenu_ShowMenu_Cancel" xml:space="preserve">
     <value>İptal</value>
@@ -259,9 +247,6 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>Bu mesajı tekrar gösterme.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Görev: {0}</value>
-  </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Değişim günlüğü</value>
   </data>
@@ -280,17 +265,8 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>Başlatılıyor</value>
   </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Harici kütüphaneler</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Hata</value>
-  </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Kısayol ayarlarından yeni iş akışı ekliyebilirsiniz...</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Resim buraya kaydedilemedi: {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>ShareX dil değişikliğinin uygulanması için yeniden başlatılmalı.
@@ -365,9 +341,6 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="MainForm_tsmiTestTextUpload_Click_Text_upload_test" xml:space="preserve">
     <value>Metin yükleme testi</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Kolonları sakla</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>{0} için görev ayarları</value>
@@ -498,9 +471,6 @@ Devam etmek istediğinizden emin misiniz?</value>
 Sağ fare tuşu menüyü açmak için
 Orta fare tuşu kapatmak için</value>
   </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Geliştirici sürümleri kararsız olabilir bu yüzden deneme amaçlı kullanılmalıdır. İndirmek istediğine emin misin?</value>
-  </data>
   <data name="WorkerTask_GetInvalidConfigResult__0__configuration_is_invalid_or_missing__Please_check__Destination_settings__window_to_configure_it_" xml:space="preserve">
     <value>{0} ayarları yanlış veya eksik. Lütfen "Hedef ayarları" penceresinden ayar yapınız.</value>
   </data>
@@ -512,12 +482,6 @@ Orta fare tuşu kapatmak için</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByPolicy_Text" xml:space="preserve">
     <value>Başlangıç, kuruluşunuz tarafından devre dışı bırakıldı</value>
-  </data>
-  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindows10CouldBeBlockingShareX" xml:space="preserve">
-    <value>Antivirüs yazılımınız veya Windows 10'daki kontrollü klasör erişimi özelliği ShareX'i engelliyor olabilir.</value>
-  </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX - Optik karakter tanıma</value>
   </data>
   <data name="Hotkey" xml:space="preserve">
     <value>Kısayol</value>
@@ -583,22 +547,8 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
   <data name="AboutForm_AboutForm_Language_pt_PT" xml:space="preserve">
     <value>Portekizce</value>
   </data>
-  <data name="FFmpeg_Missing" xml:space="preserve">
-    <value>Eksik</value>
-  </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__File__Count___0__" xml:space="preserve">
     <value>Pano içeriği: Dosya (Sayısı: {0})</value>
-  </data>
-  <data name="FFmpeg_does_not_exist" xml:space="preserve">
-    <value>{0} mevcut değil.
-
-Otomatik olarak indirmek ister misiniz?</value>
-  </data>
-  <data name="FFmpeg_Download_of_FFmpeg_failed" xml:space="preserve">
-    <value>FFmpeg indirme başarısız.</value>
-  </data>
-  <data name="FFmpeg_FFmpeg_successfully_downloaded" xml:space="preserve">
-    <value>FFmpeg başarıyla indirildi.</value>
   </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>FFmpeg hatası</value>
@@ -634,7 +584,7 @@ Otomatik olarak indirmek ister misiniz?</value>
     <value>Pencere dikdörtgeni</value>
   </data>
   <data name="InspectWindow_WindowStyles" xml:space="preserve">
-    <value>Pencere stili</value>
+    <value>Pencere stilleri</value>
   </data>
   <data name="InspectWindow_WindowTitle" xml:space="preserve">
     <value>Pencere başlığı</value>
@@ -645,7 +595,49 @@ Otomatik olarak indirmek ister misiniz?</value>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Hata ayıklama kütüğü hassas bilgiler içerebilir. Devam etmek istediğinize emin misiniz?</value>
   </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Lütfen dikkat, ShareX optik karakter tanıma gerçekleştirmek için OCR.Space'in çevrimiçi API'sini kullanmaktadır. ShareX'e bu servise resim yüklemesi için izin veriyor musunuz?</value>
+  <data name="ImageData_Write_Error_Message" xml:space="preserve">
+    <value>Resim buraya kaydedilemedi:</value>
+  </data>
+  <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
+    <value>Antivirüs yazılımınız veya Windows'daki kontrollü klasör erişimi özelliği ShareX'i engelliyor olabilir.</value>
+  </data>
+  <data name="ClipboardDoesNotContainAnImage" xml:space="preserve">
+    <value>Pano resim içermiyor.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Hata</value>
+  </data>
+  <data name="AboutForm_AboutForm_Team" xml:space="preserve">
+    <value>Takım</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_pl" xml:space="preserve">
+    <value>Lehçe</value>
+  </data>
+  <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
+    <value>Rumence</value>
+  </data>
+  <data name="PinToScreen" xml:space="preserve">
+    <value>Ekrana sabitle</value>
+  </data>
+  <data name="AboutForm_AboutForm_Links" xml:space="preserve">
+    <value>Bağlantılar</value>
+  </data>
+  <data name="AboutForm_AboutForm_Credits" xml:space="preserve">
+    <value>Katkıda bulunanlar</value>
+  </data>
+  <data name="AboutForm_AboutForm_Privacy_policy" xml:space="preserve">
+    <value>Gizlilik ilkesi</value>
+  </data>
+  <data name="InspectWindow_ExtendedWindowStyles" xml:space="preserve">
+    <value>Genişletilmiş pencere stilleri</value>
+  </data>
+  <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
+    <value>Optik karakter tanıma özelliği yalnızca Windows sürüm {0} veya daha yenisi ile kullanılabilir.</value>
+  </data>
+  <data name="UnableToFindAWindowWithSpecifiedWindowTitle" xml:space="preserve">
+    <value>Belirtilen pencere başlığına sahip bir pencere bulunamadı.</value>
+  </data>
+  <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
+    <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>
   </data>
 </root>

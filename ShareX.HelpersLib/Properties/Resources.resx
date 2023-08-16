@@ -133,7 +133,7 @@
     <value>Big square</value>
   </data>
   <data name="HotkeyType_TweetMessage_Category" xml:space="preserve">
-    <value>Tools</value>
+    <value>Upload</value>
   </data>
   <data name="ReplCodeMenuEntry_s_Current_second" xml:space="preserve">
     <value>Second</value>
@@ -611,9 +611,6 @@ Would you like to download it?</value>
   <data name="HotkeyType_ScreenRecorder" xml:space="preserve">
     <value>Start/Stop screen recording</value>
   </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Tools</value>
-  </data>
   <data name="HotkeyType_OpenScreenshotsFolder_Category" xml:space="preserve">
     <value>Other</value>
   </data>
@@ -630,7 +627,7 @@ Would you like to download it?</value>
     <value>Screen capture</value>
   </data>
   <data name="HotkeyType_IndexFolder" xml:space="preserve">
-    <value>Index folder</value>
+    <value>Directory indexer</value>
   </data>
   <data name="HotkeyType_WindowRectangle_Category" xml:space="preserve">
     <value>Screen capture</value>
@@ -664,9 +661,6 @@ Would you like to download it?</value>
   </data>
   <data name="MyPictureBox_LoadImageAsync_Loading_image___" xml:space="preserve">
     <value>Loading image...</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Text capture (OCR)</value>
   </data>
   <data name="ScrollingCaptureScrollTopMethod_KeyPressHome" xml:space="preserve">
     <value>Simulate pressing "Home" key</value>
@@ -983,9 +977,6 @@ Would you like to download and install it?</value>
   <data name="PNGBitDepth_Default" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>FTP client</value>
-  </data>
   <data name="Helpers_CreateDirectoryIfNotExist_Create_failed_" xml:space="preserve">
     <value>Could not create directory.</value>
   </data>
@@ -1039,9 +1030,6 @@ Would you like to download and install it?</value>
   </data>
   <data name="DownloaderForm_DownloaderForm_Filename___0_" xml:space="preserve">
     <value>Filename: {0}</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Screen capture</value>
   </data>
   <data name="ShapeType_DrawingEllipse" xml:space="preserve">
     <value>Ellipse (E)</value>
@@ -1372,5 +1360,140 @@ Would you like to download and install it?</value>
   </data>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Capture last region</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Stop screen recording</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Toggle tray menu</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Edit image</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Open file</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Open image viewer</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Open URL</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Side</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>List view</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Thumbnail view</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Image viewer</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>OCR</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Borderless window</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Image viewer</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Pin to screen</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>No effect</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Torn edges</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Wave</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Sawtooth</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Cut out (X)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Pin to screen (From clipboard)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Pin to screen (From file)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Pin to screen (From screen)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Pause screen recording</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
+    <value>Screen record</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Freehand arrow</value>
   </data>
 </root>

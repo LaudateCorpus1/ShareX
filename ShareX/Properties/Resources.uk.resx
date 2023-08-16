@@ -169,9 +169,6 @@
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Українська</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>Автори-розробники</value>
-  </data>
   <data name="TaskManager_task_UploadCompleted_ShareX___Task_completed" xml:space="preserve">
     <value>Завдання виконано</value>
   </data>
@@ -180,12 +177,6 @@
   </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Затримка для знімка: {0}с</value>
-  </data>
-  <data name="ApplicationSettingsForm_btnCheckDevBuild_Click_DevBuilds_Warning" xml:space="preserve">
-    <value>Dev-збірки можуть бути нестабільними та повинні використовуватись лише для тестування. Хочете встановити?</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>Приховати стовпці</value>
   </data>
   <data name="ActionsForm_btnOK_Click_Name_can_t_be_empty_" xml:space="preserve">
     <value>Назва не може бути порожньою.</value>
@@ -260,20 +251,11 @@
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>Скопійовано в буфер обміну: {0}</value>
   </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>Приховати меню</value>
-  </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>Неможливо створити теку:</value>
   </data>
   <data name="TaskHelpers_TweetMessage_Unable_to_find_valid_Twitter_account_" xml:space="preserve">
     <value>Не вдалось знайти дійсний обліковий запис Twitter.</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>Показати меню</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>Показати стовпці</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Посилання для завантаження та вивантаження</value>
@@ -292,9 +274,6 @@
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Залишилось часу: {0} с ({1}%) Всього: {2}</value>
-  </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>Завдання: {0}</value>
   </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Збій реєстрації гарячих клавіш</value>
@@ -367,22 +346,13 @@
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>Ви можете додати робочі процеси у налаштуваннях гарячих клавіш...</value>
   </data>
-  <data name="ShareXOpticalCharacterRecognition" xml:space="preserve">
-    <value>ShareX — Оптичне розпізнавання символів</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_ru" xml:space="preserve">
     <value>Російська</value>
-  </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>Неможливо записати зображення до теки {0}.</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
     <value>Треба перезапустити ShareX, щоб застосувати зміну мови.
 
 Чи хочете Ви перезапустити ShareX?</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>Помилка</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
     <value>Запустити ShareX під час запуску Windows</value>
@@ -401,9 +371,6 @@
   </data>
   <data name="UploadManager_UploadFolder_Folder_upload" xml:space="preserve">
     <value>Тека відвантаження</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>Зовнішні бібілотеки</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_" xml:space="preserve">
     <value>Після захоплення: {0}</value>
@@ -503,9 +470,6 @@
   </data>
   <data name="ActionsToolbar_Close" xml:space="preserve">
     <value>Закрити</value>
-  </data>
-  <data name="PleaseNoteThatShareXIsUsingOCRSpaceSOnlineAPIToPerformOpticalCharacterRecognitionDoYouGivePermissionToShareXToUploadImagesToThisService" xml:space="preserve">
-    <value>Зверніть увагу, що ShareX використовує мережеве API OCR.Space для виконання оптичного розпізнавання символів. Чи даєте Ви дозвіл ShareX на вивантаження зображень до цієї служби?</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings_for__0_" xml:space="preserve">
     <value>Параметри завдання для {0}</value>

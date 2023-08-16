@@ -495,9 +495,6 @@
   <data name="lblScreenshotDelay.Text" xml:space="preserve">
     <value>Задержка скриншота:</value>
   </data>
-  <data name="cbCaptureOCRProcessOnLoad.Text" xml:space="preserve">
-    <value>Распознавать при открывании диалога</value>
-  </data>
   <data name="cbCaptureOCRSilent.Text" xml:space="preserve">
     <value>Распознавать тихо</value>
   </data>
@@ -632,5 +629,20 @@
   </data>
   <data name="cbURLRegexReplace.Text" xml:space="preserve">
     <value>Заменить URL результата через регулярные выражения</value>
+  </data>
+  <data name="lblRegionCaptureFPSLimit.Text" xml:space="preserve">
+    <value>Лимит FPS:</value>
+  </data>
+  <data name="cbToastWindowAutoHide.Text" xml:space="preserve">
+    <value>Автоматически прятать при захвате экрана</value>
+  </data>
+  <data name="cbRegionCaptureActiveMonitorMode.Text" xml:space="preserve">
+    <value>Запереть выбор области и курсор в активном мониторе</value>
+  </data>
+  <data name="lblTask.Text" xml:space="preserve">
+    <value>Задача:</value>
+  </data>
+  <data name="tpOCR.Text" xml:space="preserve">
+    <value>Распознавание текста (OCR)</value>
   </data>
 </root>

@@ -40,6 +40,7 @@
             this.cmsTask = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tcTaskSettings = new System.Windows.Forms.TabControl();
             this.tpTask = new System.Windows.Forms.TabPage();
+            this.lblTask = new System.Windows.Forms.Label();
             this.btnScreenshotsFolderBrowse = new System.Windows.Forms.Button();
             this.txtScreenshotsFolder = new System.Windows.Forms.TextBox();
             this.cbOverrideScreenshotsFolder = new System.Windows.Forms.CheckBox();
@@ -73,6 +74,7 @@
             this.cbUseCustomTaskCompletedSound = new System.Windows.Forms.CheckBox();
             this.cbUseCustomCaptureSound = new System.Windows.Forms.CheckBox();
             this.gbToastWindow = new System.Windows.Forms.GroupBox();
+            this.cbToastWindowAutoHide = new System.Windows.Forms.CheckBox();
             this.lblToastWindowFadeDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowDurationSeconds = new System.Windows.Forms.Label();
             this.lblToastWindowSizeX = new System.Windows.Forms.Label();
@@ -155,6 +157,9 @@
             this.nudCaptureShadowOffset = new System.Windows.Forms.NumericUpDown();
             this.cbOverrideCaptureSettings = new System.Windows.Forms.CheckBox();
             this.tpRegionCapture = new System.Windows.Forms.TabPage();
+            this.cbRegionCaptureActiveMonitorMode = new System.Windows.Forms.CheckBox();
+            this.nudRegionCaptureFPSLimit = new System.Windows.Forms.NumericUpDown();
+            this.lblRegionCaptureFPSLimit = new System.Windows.Forms.Label();
             this.cbRegionCaptureShowFPS = new System.Windows.Forms.CheckBox();
             this.flpRegionCaptureFixedSize = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRegionCaptureFixedSizeWidth = new System.Windows.Forms.Label();
@@ -212,8 +217,8 @@
             this.nudGIFFPS = new System.Windows.Forms.NumericUpDown();
             this.lblGIFFPS = new System.Windows.Forms.Label();
             this.tpOCR = new System.Windows.Forms.TabPage();
+            this.btnCaptureOCRHelp = new System.Windows.Forms.Button();
             this.cbCaptureOCRAutoCopy = new System.Windows.Forms.CheckBox();
-            this.cbCaptureOCRProcessOnLoad = new System.Windows.Forms.CheckBox();
             this.cbCaptureOCRSilent = new System.Windows.Forms.CheckBox();
             this.lblOCRDefaultLanguage = new System.Windows.Forms.Label();
             this.cbCaptureOCRDefaultLanguage = new System.Windows.Forms.ComboBox();
@@ -326,6 +331,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudScreenshotDelay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).BeginInit();
             this.tpRegionCapture.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).BeginInit();
             this.flpRegionCaptureFixedSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeHeight)).BeginInit();
@@ -420,6 +426,7 @@
             // tpTask
             // 
             this.tpTask.BackColor = System.Drawing.SystemColors.Window;
+            this.tpTask.Controls.Add(this.lblTask);
             this.tpTask.Controls.Add(this.btnScreenshotsFolderBrowse);
             this.tpTask.Controls.Add(this.txtScreenshotsFolder);
             this.tpTask.Controls.Add(this.cbOverrideScreenshotsFolder);
@@ -438,6 +445,11 @@
             this.tpTask.Controls.Add(this.lblDescription);
             resources.ApplyResources(this.tpTask, "tpTask");
             this.tpTask.Name = "tpTask";
+            // 
+            // lblTask
+            // 
+            resources.ApplyResources(this.lblTask, "lblTask");
+            this.lblTask.Name = "lblTask";
             // 
             // btnScreenshotsFolderBrowse
             // 
@@ -556,6 +568,7 @@
             // 
             // btnTask
             // 
+            this.btnTask.Image = global::ShareX.Properties.Resources.gear;
             resources.ApplyResources(this.btnTask, "btnTask");
             this.btnTask.Menu = this.cmsTask;
             this.btnTask.Name = "btnTask";
@@ -683,6 +696,7 @@
             // 
             // gbToastWindow
             // 
+            this.gbToastWindow.Controls.Add(this.cbToastWindowAutoHide);
             this.gbToastWindow.Controls.Add(this.lblToastWindowFadeDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowDurationSeconds);
             this.gbToastWindow.Controls.Add(this.lblToastWindowSizeX);
@@ -704,6 +718,13 @@
             resources.ApplyResources(this.gbToastWindow, "gbToastWindow");
             this.gbToastWindow.Name = "gbToastWindow";
             this.gbToastWindow.TabStop = false;
+            // 
+            // cbToastWindowAutoHide
+            // 
+            resources.ApplyResources(this.cbToastWindowAutoHide, "cbToastWindowAutoHide");
+            this.cbToastWindowAutoHide.Name = "cbToastWindowAutoHide";
+            this.cbToastWindowAutoHide.UseVisualStyleBackColor = true;
+            this.cbToastWindowAutoHide.CheckedChanged += new System.EventHandler(this.cbToastWindowAutoHide_CheckedChanged);
             // 
             // lblToastWindowFadeDurationSeconds
             // 
@@ -796,6 +817,7 @@
             // 
             // nudToastWindowFadeDuration
             // 
+            this.nudToastWindowFadeDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowFadeDuration, "nudToastWindowFadeDuration");
             this.nudToastWindowFadeDuration.Maximum = new decimal(new int[] {
             30,
@@ -807,6 +829,7 @@
             // 
             // nudToastWindowDuration
             // 
+            this.nudToastWindowDuration.DecimalPlaces = 1;
             resources.ApplyResources(this.nudToastWindowDuration, "nudToastWindowDuration");
             this.nudToastWindowDuration.Maximum = new decimal(new int[] {
             30,
@@ -1386,6 +1409,9 @@
             // tpRegionCapture
             // 
             this.tpRegionCapture.BackColor = System.Drawing.SystemColors.Window;
+            this.tpRegionCapture.Controls.Add(this.cbRegionCaptureActiveMonitorMode);
+            this.tpRegionCapture.Controls.Add(this.nudRegionCaptureFPSLimit);
+            this.tpRegionCapture.Controls.Add(this.lblRegionCaptureFPSLimit);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureShowFPS);
             this.tpRegionCapture.Controls.Add(this.flpRegionCaptureFixedSize);
             this.tpRegionCapture.Controls.Add(this.cbRegionCaptureIsFixedSize);
@@ -1418,6 +1444,29 @@
             this.tpRegionCapture.Controls.Add(this.nudRegionCaptureMagnifierPixelSize);
             resources.ApplyResources(this.tpRegionCapture, "tpRegionCapture");
             this.tpRegionCapture.Name = "tpRegionCapture";
+            // 
+            // cbRegionCaptureActiveMonitorMode
+            // 
+            resources.ApplyResources(this.cbRegionCaptureActiveMonitorMode, "cbRegionCaptureActiveMonitorMode");
+            this.cbRegionCaptureActiveMonitorMode.Name = "cbRegionCaptureActiveMonitorMode";
+            this.cbRegionCaptureActiveMonitorMode.UseVisualStyleBackColor = true;
+            this.cbRegionCaptureActiveMonitorMode.CheckedChanged += new System.EventHandler(this.cbRegionCaptureActiveMonitorMode_CheckedChanged);
+            // 
+            // nudRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.nudRegionCaptureFPSLimit, "nudRegionCaptureFPSLimit");
+            this.nudRegionCaptureFPSLimit.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudRegionCaptureFPSLimit.Name = "nudRegionCaptureFPSLimit";
+            this.nudRegionCaptureFPSLimit.ValueChanged += new System.EventHandler(this.nudRegionCaptureFPSLimit_ValueChanged);
+            // 
+            // lblRegionCaptureFPSLimit
+            // 
+            resources.ApplyResources(this.lblRegionCaptureFPSLimit, "lblRegionCaptureFPSLimit");
+            this.lblRegionCaptureFPSLimit.Name = "lblRegionCaptureFPSLimit";
             // 
             // cbRegionCaptureShowFPS
             // 
@@ -1937,8 +1986,8 @@
             // 
             // tpOCR
             // 
+            this.tpOCR.Controls.Add(this.btnCaptureOCRHelp);
             this.tpOCR.Controls.Add(this.cbCaptureOCRAutoCopy);
-            this.tpOCR.Controls.Add(this.cbCaptureOCRProcessOnLoad);
             this.tpOCR.Controls.Add(this.cbCaptureOCRSilent);
             this.tpOCR.Controls.Add(this.lblOCRDefaultLanguage);
             this.tpOCR.Controls.Add(this.cbCaptureOCRDefaultLanguage);
@@ -1946,19 +1995,20 @@
             this.tpOCR.Name = "tpOCR";
             this.tpOCR.UseVisualStyleBackColor = true;
             // 
+            // btnCaptureOCRHelp
+            // 
+            this.btnCaptureOCRHelp.Image = global::ShareX.Properties.Resources.question;
+            resources.ApplyResources(this.btnCaptureOCRHelp, "btnCaptureOCRHelp");
+            this.btnCaptureOCRHelp.Name = "btnCaptureOCRHelp";
+            this.btnCaptureOCRHelp.UseVisualStyleBackColor = true;
+            this.btnCaptureOCRHelp.Click += new System.EventHandler(this.btnCaptureOCRHelp_Click);
+            // 
             // cbCaptureOCRAutoCopy
             // 
             resources.ApplyResources(this.cbCaptureOCRAutoCopy, "cbCaptureOCRAutoCopy");
             this.cbCaptureOCRAutoCopy.Name = "cbCaptureOCRAutoCopy";
             this.cbCaptureOCRAutoCopy.UseVisualStyleBackColor = true;
             this.cbCaptureOCRAutoCopy.CheckedChanged += new System.EventHandler(this.cbCaptureOCRAutoCopy_CheckedChanged);
-            // 
-            // cbCaptureOCRProcessOnLoad
-            // 
-            resources.ApplyResources(this.cbCaptureOCRProcessOnLoad, "cbCaptureOCRProcessOnLoad");
-            this.cbCaptureOCRProcessOnLoad.Name = "cbCaptureOCRProcessOnLoad";
-            this.cbCaptureOCRProcessOnLoad.UseVisualStyleBackColor = true;
-            this.cbCaptureOCRProcessOnLoad.CheckedChanged += new System.EventHandler(this.cbCaptureOCRProcessOnLoad_CheckedChanged);
             // 
             // cbCaptureOCRSilent
             // 
@@ -2597,6 +2647,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudCaptureShadowOffset)).EndInit();
             this.tpRegionCapture.ResumeLayout(false);
             this.tpRegionCapture.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFPSLimit)).EndInit();
             this.flpRegionCaptureFixedSize.ResumeLayout(false);
             this.flpRegionCaptureFixedSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudRegionCaptureFixedSizeWidth)).EndInit();
@@ -2851,7 +2902,6 @@
         private System.Windows.Forms.Label lblOCRDefaultLanguage;
         private System.Windows.Forms.ComboBox cbCaptureOCRDefaultLanguage;
         private System.Windows.Forms.CheckBox cbCaptureOCRSilent;
-        private System.Windows.Forms.CheckBox cbCaptureOCRProcessOnLoad;
         private System.Windows.Forms.CheckBox cbCaptureOCRAutoCopy;
         private System.Windows.Forms.Label lblScreenshotDelay;
         private System.Windows.Forms.Label lblAutoIncrementNumber;
@@ -2907,5 +2957,11 @@
         private System.Windows.Forms.Label lblToastWindowDurationSeconds;
         private System.Windows.Forms.Button btnActions;
         private System.Windows.Forms.CheckBox cbImageAutoJPEGQuality;
+        private System.Windows.Forms.Label lblTask;
+        private System.Windows.Forms.CheckBox cbToastWindowAutoHide;
+        private System.Windows.Forms.NumericUpDown nudRegionCaptureFPSLimit;
+        private System.Windows.Forms.Label lblRegionCaptureFPSLimit;
+        private System.Windows.Forms.CheckBox cbRegionCaptureActiveMonitorMode;
+        private System.Windows.Forms.Button btnCaptureOCRHelp;
     }
 }

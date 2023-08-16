@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -75,17 +75,6 @@ namespace ShareX
 
         public bool OverrideScreenshotsFolder = false;
         public string ScreenshotsFolder = "";
-
-        public string GetScreenshotsFolder()
-        {
-            if (OverrideScreenshotsFolder && !string.IsNullOrEmpty(ScreenshotsFolder))
-            {
-                string screenshotsFolderPath = NameParser.Parse(NameParserType.FolderPath, ScreenshotsFolder);
-                return Helpers.GetAbsolutePath(screenshotsFolderPath);
-            }
-
-            return Program.ScreenshotsFolder;
-        }
 
         public bool UseDefaultGeneralSettings = true;
         public TaskSettingsGeneral GeneralSettings = new TaskSettingsGeneral();
@@ -289,6 +278,7 @@ namespace ShareX
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
         public ToastClickAction ToastWindowMiddleClickAction = ToastClickAction.AnnotateImage;
+        public bool ToastWindowAutoHide = true;
         public bool UseCustomCaptureSound = false;
         public string CustomCaptureSoundPath = "";
         public bool UseCustomTaskCompletedSound = false;
@@ -361,7 +351,7 @@ namespace ShareX
 
         #region Capture / Screen recorder
 
-        public FFmpegOptions FFmpegOptions = new FFmpegOptions(Program.DefaultFFmpegFilePath);
+        public FFmpegOptions FFmpegOptions = new FFmpegOptions();
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
@@ -507,8 +497,8 @@ namespace ShareX
         public TaskSettingsAdvanced()
         {
             this.ApplyDefaultPropertyValues();
-            ImageExtensions = Helpers.ImageFileExtensions.ToList();
-            TextExtensions = Helpers.TextFileExtensions.ToList();
+            ImageExtensions = FileHelpers.ImageFileExtensions.ToList();
+            TextExtensions = FileHelpers.TextFileExtensions.ToList();
         }
     }
 }

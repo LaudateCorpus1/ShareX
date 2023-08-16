@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -27,7 +27,6 @@ using ShareX.HelpersLib;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
-using ShareX.UploadersLib.OtherServices;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -206,6 +205,7 @@ namespace ShareX
             cbToastWindowRightClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowRightClickAction;
             cbToastWindowMiddleClickAction.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<ToastClickAction>());
             cbToastWindowMiddleClickAction.SelectedIndex = (int)TaskSettings.GeneralSettings.ToastWindowMiddleClickAction;
+            cbToastWindowAutoHide.Checked = TaskSettings.GeneralSettings.ToastWindowAutoHide;
             cbUseCustomCaptureSound.Checked = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Enabled = btnCustomCaptureSoundPath.Enabled = TaskSettings.GeneralSettings.UseCustomCaptureSound;
             txtCustomCaptureSoundPath.Text = TaskSettings.GeneralSettings.CustomCaptureSoundPath;
@@ -319,6 +319,8 @@ namespace ShareX
             nudRegionCaptureFixedSizeWidth.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Width);
             nudRegionCaptureFixedSizeHeight.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FixedSize.Height);
             cbRegionCaptureShowFPS.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ShowFPS;
+            nudRegionCaptureFPSLimit.SetValue(TaskSettings.CaptureSettings.SurfaceOptions.FPSLimit);
+            cbRegionCaptureActiveMonitorMode.Checked = TaskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode;
 
             #endregion Region capture
 
@@ -341,15 +343,43 @@ namespace ShareX
 
             OCROptions ocrOptions = TaskSettings.CaptureSettings.OCROptions;
 
-            cbCaptureOCRDefaultLanguage.Items.AddRange(Helpers.GetEnumDescriptions<OCRSpaceLanguages>());
-            cbCaptureOCRDefaultLanguage.SelectedIndex = (int)ocrOptions.DefaultLanguage;
+            try
+            {
+                OCRLanguage[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
+
+                if (languages.Length > 0)
+                {
+                    cbCaptureOCRDefaultLanguage.Items.AddRange(languages);
+
+                    if (ocrOptions.Language == null)
+                    {
+                        cbCaptureOCRDefaultLanguage.SelectedIndex = 0;
+                        ocrOptions.Language = languages[0].LanguageTag;
+                    }
+                    else
+                    {
+                        int index = Array.FindIndex(languages, x => x.LanguageTag.Equals(ocrOptions.Language, StringComparison.OrdinalIgnoreCase));
+
+                        if (index >= 0)
+                        {
+                            cbCaptureOCRDefaultLanguage.SelectedIndex = index;
+                        }
+                        else
+                        {
+                            cbCaptureOCRDefaultLanguage.SelectedIndex = 0;
+                            ocrOptions.Language = languages[0].LanguageTag;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                cbCaptureOCRDefaultLanguage.Enabled = false;
+            }
 
             cbCaptureOCRSilent.Checked = ocrOptions.Silent;
-            cbCaptureOCRProcessOnLoad.Checked = ocrOptions.ProcessOnLoad;
+            cbCaptureOCRAutoCopy.Enabled = !ocrOptions.Silent;
             cbCaptureOCRAutoCopy.Checked = ocrOptions.AutoCopy;
-
-            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
-            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
 
             #endregion OCR
 
@@ -681,7 +711,8 @@ namespace ShareX
 
         private void UpdateTaskTabMenuNames()
         {
-            btnTask.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_Task___0_, TaskSettings.Job.GetLocalizedDescription());
+            btnTask.Text = TaskSettings.Job.GetLocalizedDescription();
+            btnTask.Image = TaskHelpers.FindMenuIcon(TaskSettings.Job);
 
             btnAfterCapture.Text = string.Format(Resources.TaskSettingsForm_UpdateUploaderMenuNames_After_capture___0_,
                 string.Join(", ", TaskSettings.AfterCaptureJob.GetFlags().Select(x => x.GetLocalizedDescription())));
@@ -763,7 +794,7 @@ namespace ShareX
 
         private void btnScreenshotsFolderBrowse_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
+            FileHelpers.BrowseFolder(Resources.ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path,
                 txtScreenshotsFolder, TaskSettings.ScreenshotsFolder, true);
         }
 
@@ -833,6 +864,11 @@ namespace ShareX
             TaskSettings.GeneralSettings.ToastWindowMiddleClickAction = (ToastClickAction)cbToastWindowMiddleClickAction.SelectedIndex;
         }
 
+        private void cbToastWindowAutoHide_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.GeneralSettings.ToastWindowAutoHide = cbToastWindowAutoHide.Checked;
+        }
+
         private void cbUseCustomCaptureSound_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.GeneralSettings.UseCustomCaptureSound = cbUseCustomCaptureSound.Checked;
@@ -846,7 +882,7 @@ namespace ShareX
 
         private void btnCustomCaptureSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomCaptureSoundPath);
+            FileHelpers.BrowseFile(txtCustomCaptureSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomTaskCompletedSound_CheckedChanged(object sender, EventArgs e)
@@ -862,7 +898,7 @@ namespace ShareX
 
         private void btnCustomTaskCompletedSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomTaskCompletedSoundPath);
+            FileHelpers.BrowseFile(txtCustomTaskCompletedSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbUseCustomErrorSound_CheckedChanged(object sender, EventArgs e)
@@ -878,7 +914,7 @@ namespace ShareX
 
         private void btnCustomErrorSoundPath_Click(object sender, EventArgs e)
         {
-            Helpers.BrowseFile(txtCustomErrorSoundPath);
+            FileHelpers.BrowseFile(txtCustomErrorSoundPath, filter: "Audio file (*.wav)|*.wav");
         }
 
         private void cbDisableNotifications_CheckedChanged(object sender, EventArgs e)
@@ -1203,13 +1239,23 @@ namespace ShareX
             TaskSettings.CaptureSettings.SurfaceOptions.ShowFPS = cbRegionCaptureShowFPS.Checked;
         }
 
+        private void nudRegionCaptureFPSLimit_ValueChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.FPSLimit = (int)nudRegionCaptureFPSLimit.Value;
+        }
+
+        private void cbRegionCaptureActiveMonitorMode_CheckedChanged(object sender, EventArgs e)
+        {
+            TaskSettings.CaptureSettings.SurfaceOptions.ActiveMonitorMode = cbRegionCaptureActiveMonitorMode.Checked;
+        }
+
         #endregion Region capture
 
         #region Screen recorder
 
         private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
-            ScreencastOptions options = new ScreencastOptions
+            ScreenRecordingOptions options = new ScreenRecordingOptions
             {
                 IsRecording = true,
                 FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
@@ -1222,7 +1268,6 @@ namespace ShareX
 
             using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
             {
-                form.DefaultToolsFolder = Program.ToolsFolder;
                 form.ShowDialog();
 
                 TaskSettings.CaptureSettings.FFmpegOptions = form.Options.FFmpeg;
@@ -1287,20 +1332,21 @@ namespace ShareX
 
         private void cbCaptureOCRDefaultLanguage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.CaptureSettings.OCROptions.DefaultLanguage = (OCRSpaceLanguages)cbCaptureOCRDefaultLanguage.SelectedIndex;
+            if (loaded)
+            {
+                TaskSettings.CaptureSettings.OCROptions.Language = ((OCRLanguage)cbCaptureOCRDefaultLanguage.SelectedItem).LanguageTag;
+            }
+        }
+
+        private void btnCaptureOCRHelp_Click(object sender, EventArgs e)
+        {
+            URLHelpers.OpenURL(Links.DocsOCR);
         }
 
         private void cbCaptureOCRSilent_CheckedChanged(object sender, EventArgs e)
         {
             TaskSettings.CaptureSettings.OCROptions.Silent = cbCaptureOCRSilent.Checked;
-
-            cbCaptureOCRAutoCopy.Enabled = !cbCaptureOCRSilent.Checked;
-            cbCaptureOCRProcessOnLoad.Enabled = !cbCaptureOCRSilent.Checked;
-        }
-
-        private void cbCaptureOCRProcessOnLoad_CheckedChanged(object sender, EventArgs e)
-        {
-            TaskSettings.CaptureSettings.OCROptions.ProcessOnLoad = cbCaptureOCRProcessOnLoad.Checked;
+            cbCaptureOCRAutoCopy.Enabled = !TaskSettings.CaptureSettings.OCROptions.Silent;
         }
 
         private void cbCaptureOCRAutoCopy_CheckedChanged(object sender, EventArgs e)
@@ -1459,7 +1505,7 @@ namespace ShareX
             for (int i = 0; i < cbUploaderFiltersDestination.Items.Count; i++)
             {
                 if (cbUploaderFiltersDestination.Items[i] is IGenericUploaderService service &&
-                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.InvariantCultureIgnoreCase))
+                    service.ServiceIdentifier.Equals(filter.Uploader, StringComparison.OrdinalIgnoreCase))
                 {
                     cbUploaderFiltersDestination.SelectedIndex = i;
                     break;
@@ -1605,7 +1651,7 @@ namespace ShareX
 
         private void btnActions_Click(object sender, EventArgs e)
         {
-            URLHelpers.OpenURL(Links.URL_ACTIONS);
+            URLHelpers.OpenURL(Links.Actions);
         }
 
         private void lvActions_SelectedIndexChanged(object sender, EventArgs e)

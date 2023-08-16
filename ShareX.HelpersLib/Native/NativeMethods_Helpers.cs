@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -147,7 +147,9 @@ namespace ShareX.HelpersLib
 
         private static Icon GetSmallApplicationIcon(IntPtr handle)
         {
-            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out IntPtr iconHandle);
+            IntPtr iconHandle;
+
+            SendMessageTimeout(handle, (int)WindowsMessages.GETICON, NativeConstants.ICON_SMALL2, 0, SendMessageTimeoutFlags.SMTO_ABORTIFHUNG, 1000, out iconHandle);
 
             if (iconHandle == IntPtr.Zero)
             {
@@ -484,21 +486,6 @@ namespace ShareX.HelpersLib
                     chs[i] = ' ';
             }
             return new string(chs);
-        }
-
-        public static bool Is64Bit()
-        {
-#if WindowsStore
-            return true;
-#else
-            return IntPtr.Size == 8 || (IntPtr.Size == 4 && Is32BitProcessOn64BitProcessor());
-#endif
-        }
-
-        private static bool Is32BitProcessOn64BitProcessor()
-        {
-            IsWow64Process(Process.GetCurrentProcess().Handle, out bool retVal);
-            return retVal;
         }
 
         public static bool FlashWindowEx(Form frm, uint flashCount = uint.MaxValue)

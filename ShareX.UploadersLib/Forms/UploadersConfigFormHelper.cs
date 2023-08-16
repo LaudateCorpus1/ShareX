@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -69,7 +69,7 @@ namespace ShareX.UploadersLib
                     lvi.SubItems.Add(album.title ?? "");
                     lvi.SubItems.Add(album.description ?? "");
                     lvi.Selected = Config.ImgurSelectedAlbum != null && !string.IsNullOrEmpty(Config.ImgurSelectedAlbum.id) &&
-                        album.id.Equals(Config.ImgurSelectedAlbum.id, StringComparison.InvariantCultureIgnoreCase);
+                        album.id.Equals(Config.ImgurSelectedAlbum.id, StringComparison.OrdinalIgnoreCase);
                     lvi.Tag = album;
                     lvImgurAlbumList.Items.Add(lvi);
                 }
@@ -293,14 +293,13 @@ namespace ShareX.UploadersLib
 
         private void B2UpdateCustomDomainPreview()
         {
-            string uploadPath = NameParser.Parse(NameParserType.FolderPath, Config.B2UploadPath);
+            string uploadPath = NameParser.Parse(NameParserType.FilePath, Config.B2UploadPath);
             string url;
 
             if (cbB2CustomUrl.Checked)
             {
-                string customUrl = NameParser.Parse(NameParserType.FolderPath, Config.B2CustomUrl);
-                url = URLHelpers.CombineURL(customUrl, uploadPath, "example.png");
-                url = URLHelpers.FixPrefix(url, "https://");
+                url = URLHelpers.CombineURL(Config.B2CustomUrl, uploadPath, "example.png");
+                url = URLHelpers.FixPrefix(url);
             }
             else
             {

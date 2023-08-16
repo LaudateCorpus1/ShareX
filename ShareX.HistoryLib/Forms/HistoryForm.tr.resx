@@ -172,9 +172,6 @@
   <data name="lblFilenameFilter.Text" xml:space="preserve">
     <value>Dosya adı:</value>
   </data>
-  <data name="btnAdvancedSearch.Text" xml:space="preserve">
-    <value>Ara</value>
-  </data>
   <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
     <value>Sıfırla</value>
   </data>
@@ -187,9 +184,6 @@
   <data name="tsbAdvancedSearch.Text" xml:space="preserve">
     <value>Gelişmiş arama...</value>
   </data>
-  <data name="tsbCopyStats.Text" xml:space="preserve">
-    <value>İstatistikleri panoya kopyala</value>
-  </data>
   <data name="tsbSearch.Text" xml:space="preserve">
     <value>Ara</value>
   </data>
@@ -201,5 +195,11 @@
   </data>
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Ara:</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>İstatistikleri göster...</value>
   </data>
 </root>

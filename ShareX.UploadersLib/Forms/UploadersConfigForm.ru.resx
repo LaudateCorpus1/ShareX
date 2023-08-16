@@ -182,9 +182,6 @@
   <data name="lblStreamablePassword.Text" xml:space="preserve">
     <value>Пароль:</value>
   </data>
-  <data name="cbStreamableAnonymous.Text" xml:space="preserve">
-    <value>Аноним</value>
-  </data>
   <data name="tpSharedFolder.Text" xml:space="preserve">
     <value>Общая папка</value>
   </data>
@@ -385,7 +382,7 @@
     <value>Создать общественный URL</value>
   </data>
   <data name="cbOwnCloudDirectLink.Text" xml:space="preserve">
-    <value>Прямая ссылка (Добавить "&amp;&amp;download" к адресу)</value>
+    <value>Прямая ссылка</value>
   </data>
   <data name="cbOwnCloud81Compatibility.Text" xml:space="preserve">
     <value>Совместимость с ownCloud 8.1+</value>
@@ -1088,5 +1085,14 @@
   </data>
   <data name="cbAmazonS3SignedPayload.Text" xml:space="preserve">
     <value>Подписывать отправку</value>
+  </data>
+  <data name="cbYouTubeShowDialog.Text" xml:space="preserve">
+    <value>Показывать диалог параметров видео</value>
+  </data>
+  <data name="lblYouTubePermissionsTip.Text" xml:space="preserve">
+    <value>Вы можете отозвать доступ в любое время по ссылке ниже:</value>
+  </data>
+  <data name="cbOwnCloudAppendFileNameToURL.Text" xml:space="preserve">
+    <value>Добавлять имя файла в конец ссылки</value>
   </data>
 </root>

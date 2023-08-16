@@ -19,7 +19,7 @@ namespace ShareX.HistoryLib.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -73,15 +73,15 @@ namespace ShareX.HistoryLib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap clipboard_list {
+        internal static System.Drawing.Bitmap chart {
             get {
-                object obj = ResourceManager.GetObject("clipboard-list", resourceCulture);
+                object obj = ResourceManager.GetObject("chart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error occured while reading history file:.
+        ///   Looks up a localized string similar to Error occurred while reading history file:.
         /// </summary>
         internal static string ErrorOccuredWhileReadingHistoryFile {
             get {
@@ -398,6 +398,15 @@ namespace ShareX.HistoryLib.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to History stats.
+        /// </summary>
+        internal static string HistoryStats {
+            get {
+                return ResourceManager.GetString("HistoryStats", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File extensions:.
         /// </summary>
         internal static string HistoryStats_FileExtensions {
@@ -480,6 +489,24 @@ namespace ShareX.HistoryLib.Properties {
             get {
                 object obj = ResourceManager.GetObject("notebook", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pin to screen.
+        /// </summary>
+        internal static string PinToScreen {
+            get {
+                return ResourceManager.GetString("PinToScreen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Process names:.
+        /// </summary>
+        internal static string ProcessNames {
+            get {
+                return ResourceManager.GetString("ProcessNames", resourceCulture);
             }
         }
         

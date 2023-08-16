@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -28,7 +28,6 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib.Properties;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -46,7 +45,7 @@ namespace ShareX.HistoryLib
         private HistoryItemManager him;
         private string defaultTitle;
 
-        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null)
+        public ImageHistoryForm(string historyPath, ImageHistorySettings settings, Action<string> uploadFile = null, Action<string> editImage = null, Action<string> pinToScreen = null)
         {
             InitializeComponent();
             tsMain.Renderer = new ToolStripRoundedEdgeRenderer();
@@ -54,21 +53,15 @@ namespace ShareX.HistoryLib
             HistoryPath = historyPath;
             Settings = settings;
 
+            ilvImages.SetRenderer(new HistoryImageListViewRenderer());
             ilvImages.ThumbnailSize = Settings.ThumbnailSize;
 
             if (ShareXResources.UseCustomTheme)
             {
                 ilvImages.BorderStyle = BorderStyle.None;
-                ilvImages.Colors.BackColor = ShareXResources.Theme.DarkBackgroundColor;
-                ilvImages.Colors.BorderColor = ShareXResources.Theme.DarkBackgroundColor;
-                ilvImages.Colors.ForeColor = ShareXResources.Theme.TextColor;
-                ilvImages.Colors.ImageInnerBorderColor = Color.Transparent;
-                ilvImages.Colors.ImageOuterBorderColor = Color.Transparent;
-                ilvImages.Colors.SelectedForeColor = ShareXResources.Theme.TextColor;
-                ilvImages.Colors.UnFocusedForeColor = ShareXResources.Theme.TextColor;
             }
 
-            him = new HistoryItemManager(uploadFile, editImage);
+            him = new HistoryItemManager(uploadFile, editImage, pinToScreen);
             him.GetHistoryItems += him_GetHistoryItems;
             ilvImages.ContextMenuStrip = him.cmsHistory;
 
@@ -145,7 +138,7 @@ namespace ShareX.HistoryLib
             {
                 HistoryItem hi = historyItems[i];
 
-                if (!string.IsNullOrEmpty(hi.FilePath) && Helpers.IsImageFile(hi.FilePath) &&
+                if (!string.IsNullOrEmpty(hi.FilePath) && FileHelpers.IsImageFile(hi.FilePath) &&
                     (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null && hi.Tags.Any(tag => regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
                 {
@@ -208,7 +201,27 @@ namespace ShareX.HistoryLib
 
         private void ilvImages_ItemDoubleClick(object sender, ItemClickEventArgs e)
         {
-            him.ShowImagePreview();
+            int currentImageIndex = ilvImages.SelectedItems[0].Index;
+            int modifiedImageIndex = 0;
+            int halfRange = 100;
+            int startIndex = Math.Max(currentImageIndex - halfRange, 0);
+            int endIndex = Math.Min(startIndex + (halfRange * 2) + 1, ilvImages.Items.Count);
+
+            List<string> filteredImages = new List<string>();
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                string imageFilePath = ilvImages.Items[i].FileName;
+
+                if (i == currentImageIndex)
+                {
+                    modifiedImageIndex = filteredImages.Count;
+                }
+
+                filteredImages.Add(imageFilePath);
+            }
+
+            ImageViewer.ShowImage(filteredImages.ToArray(), modifiedImageIndex);
         }
 
         private void tstbSearch_KeyDown(object sender, KeyEventArgs e)

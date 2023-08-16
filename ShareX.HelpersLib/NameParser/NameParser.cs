@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -36,7 +36,6 @@ namespace ShareX.HelpersLib
         Default,
         Text, // Allows new line
         FileName,
-        FolderPath,
         FilePath,
         URL // URL path encodes
     }
@@ -83,17 +82,20 @@ namespace ShareX.HelpersLib
 
             if (WindowText != null)
             {
-                string windowText = WindowText.Trim().Replace(' ', '_');
+                string windowText = SanitizeInput(WindowText);
+
                 if (MaxTitleLength > 0)
                 {
                     windowText = windowText.Truncate(MaxTitleLength);
                 }
+
                 sb.Replace(CodeMenuEntryFilename.t.ToPrefixString(), windowText);
             }
 
             if (ProcessName != null)
             {
-                string processName = ProcessName.Trim().Replace(' ', '_');
+                string processName = SanitizeInput(ProcessName);
+
                 sb.Replace(CodeMenuEntryFilename.pn.ToPrefixString(), processName);
             }
 
@@ -146,7 +148,7 @@ namespace ShareX.HelpersLib
                 .Replace(CodeMenuEntryFilename.w.ToPrefixString(), CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(dt.DayOfWeek))
                 .Replace(CodeMenuEntryFilename.pm.ToPrefixString(), dt.Hour >= 12 ? "PM" : "AM");
 
-            sb.Replace(CodeMenuEntryFilename.unix.ToPrefixString(), DateTime.UtcNow.ToUnix().ToString());
+            sb.Replace(CodeMenuEntryFilename.unix.ToPrefixString(), DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString());
 
             if (sb.ToString().Contains(CodeMenuEntryFilename.i.ToPrefixString())
                 || sb.ToString().Contains(CodeMenuEntryFilename.ib.ToPrefixString())
@@ -250,7 +252,7 @@ namespace ShareX.HelpersLib
                     {
                         string path = entry.Item2;
 
-                        if (Helpers.IsTextFile(path))
+                        if (FileHelpers.IsTextFile(path))
                         {
                             return Helpers.GetRandomLineFromFile(path);
                         }
@@ -305,17 +307,13 @@ namespace ShareX.HelpersLib
             result = result.ReplaceAll(CodeMenuEntryFilename.guid.ToPrefixString().ToUpperInvariant(), () => Guid.NewGuid().ToString().ToUpperInvariant());
             result = result.ReplaceAll(CodeMenuEntryFilename.remoji.ToPrefixString(), () => RandomCrypto.Pick(Emoji.Emojis));
 
-            if (Type == NameParserType.FolderPath)
+            if (Type == NameParserType.FileName)
             {
-                result = Helpers.GetValidFolderPath(result);
-            }
-            else if (Type == NameParserType.FileName)
-            {
-                result = Helpers.GetValidFileName(result);
+                result = FileHelpers.SanitizeFileName(result);
             }
             else if (Type == NameParserType.FilePath)
             {
-                result = Helpers.GetValidFilePath(result);
+                result = FileHelpers.SanitizePath(result);
             }
             else if (Type == NameParserType.URL)
             {
@@ -328,6 +326,18 @@ namespace ShareX.HelpersLib
             }
 
             return result;
+        }
+
+        private string SanitizeInput(string input)
+        {
+            input = input.Trim().Replace(' ', '_');
+
+            if (Type == NameParserType.FileName || Type == NameParserType.FilePath)
+            {
+                input = FileHelpers.SanitizeFileName(input);
+            }
+
+            return input;
         }
 
         private IEnumerable<Tuple<string, string[]>> ListEntryWithArguments(string text, string entry, int elements)

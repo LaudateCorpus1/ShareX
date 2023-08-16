@@ -150,9 +150,6 @@
   <data name="lblURLFilter.Text" xml:space="preserve">
     <value>URL:</value>
   </data>
-  <data name="btnAdvancedSearch.Text" xml:space="preserve">
-    <value>Поиск</value>
-  </data>
   <data name="btnAdvancedSearchReset.Text" xml:space="preserve">
     <value>Сбросить</value>
   </data>
@@ -171,10 +168,13 @@
   <data name="tsbToggleMoreInfo.Text" xml:space="preserve">
     <value>Детальная информация</value>
   </data>
-  <data name="tsbCopyStats.Text" xml:space="preserve">
-    <value>Скопировать статистику в буфер обмена</value>
-  </data>
   <data name="tslSearch.Text" xml:space="preserve">
     <value>Поиск:</value>
+  </data>
+  <data name="tsbShowStats.Text" xml:space="preserve">
+    <value>Показать статистику...</value>
+  </data>
+  <data name="btnAdvancedSearchClose.Text" xml:space="preserve">
+    <value>Закрыть</value>
   </data>
 </root>

@@ -120,9 +120,6 @@
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>남은 시간: {0}초 ({1}%) 총: {2}</value>
   </data>
-  <data name="AboutForm_AboutForm_Contributors" xml:space="preserve">
-    <value>기여자</value>
-  </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} 파일이 {1}에 업로드 될 것입니다. 다른 목적지를 선택할 수 있습니다.</value>
   </data>
@@ -154,9 +151,6 @@
   <data name="UploadManager_IsUploadConfirmed_Don_t_show_this_message_again_" xml:space="preserve">
     <value>이 메시지를 다시 보이지 않기.</value>
   </data>
-  <data name="TaskSettingsForm_UpdateUploaderMenuNames_Task___0_" xml:space="preserve">
-    <value>작업: {0}</value>
-  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_hotkey" xml:space="preserve">
     <value>단축키</value>
   </data>
@@ -171,12 +165,6 @@
   </data>
   <data name="UploadTask_Prepare_Starting" xml:space="preserve">
     <value>시작 중</value>
-  </data>
-  <data name="AboutForm_AboutForm_External_libraries" xml:space="preserve">
-    <value>외부 라이브러리</value>
-  </data>
-  <data name="Program_Run_Error" xml:space="preserve">
-    <value>오류</value>
   </data>
   <data name="MainForm_UpdateWorkflowsMenu_You_can_add_workflows_from_hotkey_settings___" xml:space="preserve">
     <value>단축키 설정에서 워크플로우 추가하기...</value>
@@ -263,12 +251,6 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="TaskHelpers_OpenQuickScreenColorPicker_Copied_to_clipboard___0_" xml:space="preserve">
     <value>클립보드에 복사됨: {0}</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Hide_menu" xml:space="preserve">
-    <value>메뉴 숨기기</value>
-  </data>
-  <data name="MainForm_UpdateMenu_Show_menu" xml:space="preserve">
-    <value>메뉴 보이기</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>업로드 하기 위해 다운로드 받을 URL</value>
@@ -367,9 +349,6 @@ ShareX를 재시작할까요?</value>
   <data name="AboutForm_AboutForm_Language_nl_NL" xml:space="preserve">
     <value>독일어</value>
   </data>
-  <data name="MainForm_UpdateMainWindowLayout_Show_columns" xml:space="preserve">
-    <value>열 보이기</value>
-  </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>베트남어</value>
   </data>
@@ -398,9 +377,6 @@ ShareX를 재시작할까요?</value>
   <data name="QuickTaskMenu_ShowMenu_Continue" xml:space="preserve">
     <value>계속</value>
   </data>
-  <data name="ImageData_Write_Error" xml:space="preserve">
-    <value>{0} 경로에 이미지를 작성할 수 없습니다.</value>
-  </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>단축키 비활성화</value>
   </data>
@@ -409,9 +385,6 @@ ShareX를 재시작할까요?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_fr" xml:space="preserve">
     <value>프랑스어</value>
-  </data>
-  <data name="MainForm_UpdateMainWindowLayout_Hide_columns" xml:space="preserve">
-    <value>열 숨기기</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>단축키 활성화됨.</value>

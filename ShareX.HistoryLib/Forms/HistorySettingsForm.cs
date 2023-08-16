@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -39,14 +39,8 @@ namespace ShareX.HistoryLib
             ShareXResources.ApplyTheme(this);
 
             Settings = settings;
-            nudMaximumItemLimit.SetValue(Settings.MaxItemCount);
             cbRememberSearchText.Checked = Settings.RememberSearchText;
             cbRememberWindowState.Checked = Settings.RememberWindowState;
-        }
-
-        private void nudMaximumItemLimit_ValueChanged(object sender, EventArgs e)
-        {
-            Settings.MaxItemCount = (int)nudMaximumItemLimit.Value;
         }
 
         private void cbRememberSearchText_CheckedChanged(object sender, EventArgs e)

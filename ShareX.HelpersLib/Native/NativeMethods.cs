@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -456,6 +456,19 @@ namespace ShareX.HelpersLib
         public static extern int DwmUpdateThumbnailProperties(IntPtr hThumb, ref DWM_THUMBNAIL_PROPERTIES props);
 
         #endregion dwmapi.dll
+
+        #region winmm.dll
+
+        [DllImport("winmm.dll", EntryPoint = "timeBeginPeriod")]
+        public static extern uint TimeBeginPeriod(uint uMilliseconds);
+
+        [DllImport("winmm.dll", EntryPoint = "timeEndPeriod")]
+        public static extern uint TimeEndPeriod(uint uMilliseconds);
+
+        [DllImport("winmm.dll", EntryPoint = "timeGetDevCaps")]
+        public static extern uint TimeGetDevCaps(ref TimeCaps timeCaps, uint sizeTimeCaps);
+
+        #endregion
 
         #region Other dll
 

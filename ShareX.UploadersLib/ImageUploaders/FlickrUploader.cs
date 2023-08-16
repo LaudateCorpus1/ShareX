@@ -2,7 +2,7 @@
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
-    Copyright (c) 2007-2021 ShareX Team
+    Copyright (c) 2007-2023 ShareX Team
 
     This program is free software; you can redistribute it and/or
     modify it under the terms of the GNU General Public License
@@ -73,7 +73,7 @@ namespace ShareX.UploadersLib.ImageUploaders
         public string GetAuthorizationURL()
         {
             Dictionary<string, string> args = new Dictionary<string, string>();
-            args.Add("oauth_callback", Links.URL_CALLBACK);
+            args.Add("oauth_callback", Links.Callback);
 
             string url = GetAuthorizationURL("https://www.flickr.com/services/oauth/request_token", "https://www.flickr.com/services/oauth/authorize", AuthInfo, args);
 

@@ -296,9 +296,6 @@
   <data name="HotkeyType_FolderUpload" xml:space="preserve">
     <value>Загрузка папки</value>
   </data>
-  <data name="HotkeyType_FTPClient" xml:space="preserve">
-    <value>Клиент FTP</value>
-  </data>
   <data name="HotkeyType_HashCheck" xml:space="preserve">
     <value>Проверка хеша</value>
   </data>
@@ -530,9 +527,6 @@
   </data>
   <data name="HotkeyType_FolderUpload_Category" xml:space="preserve">
     <value>Загрузка</value>
-  </data>
-  <data name="HotkeyType_FTPClient_Category" xml:space="preserve">
-    <value>Инструменты</value>
   </data>
   <data name="HotkeyType_HashCheck_Category" xml:space="preserve">
     <value>Инструменты</value>
@@ -810,12 +804,6 @@
   </data>
   <data name="HotkeyType_OpenImageHistory" xml:space="preserve">
     <value>Открыть окно истории изображений</value>
-  </data>
-  <data name="HotkeyType_TextCapture_Category" xml:space="preserve">
-    <value>Захват экрана</value>
-  </data>
-  <data name="HotkeyType_TextCapture" xml:space="preserve">
-    <value>Захват текста (OCR)</value>
   </data>
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Распознать текст (OCR)</value>
@@ -1329,5 +1317,143 @@
   </data>
   <data name="EDataType_Default" xml:space="preserve">
     <value>По умолчанию</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Режим списка</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Режим миниатюр</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Bottom" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
+  <data name="ThumbnailTitleLocation_Top" xml:space="preserve">
+    <value>Вверху</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Default" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="ThumbnailViewClickAction_EditImage" xml:space="preserve">
+    <value>Редактировать изображение</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFile" xml:space="preserve">
+    <value>Открыть файл</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenFolder" xml:space="preserve">
+    <value>Открыть папку</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenImageViewer" xml:space="preserve">
+    <value>Открыть просмотр изображений</value>
+  </data>
+  <data name="ThumbnailViewClickAction_OpenURL" xml:space="preserve">
+    <value>Открыть ссылку</value>
+  </data>
+  <data name="ThumbnailViewClickAction_Select" xml:space="preserve">
+    <value>Выбрать</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Сбоку</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Показывать</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording" xml:space="preserve">
+    <value>Прекратить запись экрана</value>
+  </data>
+  <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
+    <value>Захват последней области</value>
+  </data>
+  <data name="HotkeyType_StopScreenRecording_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu_Category" xml:space="preserve">
+    <value>Другие</value>
+  </data>
+  <data name="HotkeyType_ToggleTrayMenu" xml:space="preserve">
+    <value>Переключить меню трея</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow" xml:space="preserve">
+    <value>Безрамочное окно</value>
+  </data>
+  <data name="HotkeyType_BorderlessWindow_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_ImageViewer_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_OCR_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_OCR" xml:space="preserve">
+    <value>Распознавание текста (OCR)</value>
+  </data>
+  <data name="HotkeyType_ImageViewer" xml:space="preserve">
+    <value>Просмотр изображений</value>
+  </data>
+  <data name="ShareXImageViewer" xml:space="preserve">
+    <value>ShareX - Просмотр изображений</value>
+  </data>
+  <data name="AfterCaptureTasks_PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="ToastClickAction_PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="HotkeyType_PinToScreen" xml:space="preserve">
+    <value>Закрепить на экране</value>
+  </data>
+  <data name="HotkeyType_PinToScreen_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="CutOutEffectType_None" xml:space="preserve">
+    <value>Без эффекта</value>
+  </data>
+  <data name="CutOutEffectType_TornEdge" xml:space="preserve">
+    <value>Рваные края</value>
+  </data>
+  <data name="CutOutEffectType_Wave" xml:space="preserve">
+    <value>Волна</value>
+  </data>
+  <data name="CutOutEffectType_ZigZag" xml:space="preserve">
+    <value>Пила</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording" xml:space="preserve">
+    <value>Приостановить запись</value>
+  </data>
+  <data name="HotkeyType_PauseScreenRecording_Category" xml:space="preserve">
+    <value>Запись экрана</value>
+  </data>
+  <data name="ShapeType_DrawingFreehandArrow" xml:space="preserve">
+    <value>Стрелка от руки</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen_Category" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromClipboard" xml:space="preserve">
+    <value>Закрепить на экране (из буффера обмена)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromFile" xml:space="preserve">
+    <value>Закрепить на экране (из файла)</value>
+  </data>
+  <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
+    <value>Закрепить на экране (из экрана)</value>
+  </data>
+  <data name="ShapeType_ToolCutOut" xml:space="preserve">
+    <value>Разрыв (X)</value>
   </data>
 </root>
