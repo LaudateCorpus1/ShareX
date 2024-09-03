@@ -135,41 +135,41 @@ jobs:
 
     steps:
       - name: Download artifact (Setup)
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Setup
           path: Output
 
       - name: Download artifact (Portable)
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Portable
           path: Output
 
       - name: Download artifact (Debug)
         if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Debug
           path: Output
 
       - name: Download artifact (Steam)
         if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: Steam
           path: Output
 
       - name: Download artifact (MicrosoftStore)
         if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: MicrosoftStore
           path: Output
 
       - name: Download artifact (MicrosoftStoreDebug)
         if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: MicrosoftStoreDebug
           path: Output
